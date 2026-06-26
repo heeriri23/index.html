@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6월 소셜미디어·홈페이지 콘텐츠 분석 보고서</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root{
+    --main:#2E5266; --accent:#E08E45; --sub:#6E8898;
+    --plus:#4C9A6E; --minus:#C0504D; --bg:#f7f8fa; --line:#e3e7ec;
+  }
+  *{box-sizing:border-box;}
+  body{
+    font-family:"Malgun Gothic","Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+    margin:0; background:var(--bg); color:#222; line-height:1.7;
+  }
+  .wrap{max-width:960px; margin:0 auto; padding:40px 24px;}
+  header{
+    background:var(--main); color:#fff; padding:36px 28px; border-radius:14px;
+    margin-bottom:32px;
+  }
+  header h1{margin:0 0 6px; font-size:24px;}
+  header p{margin:0; opacity:.85; font-size:14px;}
+  h2{
+    font-size:20px; margin:40px 0 14px; padding-bottom:8px;
+    border-bottom:3px solid var(--main); color:var(--main);
+  }
+  h3{font-size:16px; margin:26px 0 10px; color:var(--main);}
+  p{margin:10px 0; font-size:14.5px;}
+  table{
+    width:100%; border-collapse:collapse; margin:14px 0; font-size:14px;
+    background:#fff; border-radius:8px; overflow:hidden;
+    box-shadow:0 1px 3px rgba(0,0,0,.06);
+  }
+  th,td{padding:10px 12px; text-align:center; border-bottom:1px solid var(--line);}
+  th{background:var(--main); color:#fff; font-weight:600;}
+  tbody tr:nth-child(even){background:#f4f6f8;}
+  td:first-child,th:first-child{text-align:left;}
+  .card{
+    background:#fff; border-radius:12px; padding:20px 24px; margin:18px 0;
+    box-shadow:0 1px 4px rgba(0,0,0,.06);
+  }
+  .chart-box{position:relative; height:340px; margin:8px 0 4px;}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+  .note{font-size:13px; color:#777; background:#fff7ee;
+    border-left:4px solid var(--accent); padding:10px 14px; border-radius:4px;}
+  .pending{color:#999; font-style:italic;}
+  @media(max-width:720px){.grid2{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>6월 인스타그램 및 홈페이지 콘텐츠 분석 보고서</h1>
+  <p>마케팅팀 · 분석 기간: 2026년 6월 1일 ~ 6월 24일(팔로워 기준)</p>
+</header>
+
+<!-- ===== 1. 계정 전체 성과 요약 ===== -->
+<h2>1. 계정 전체 성과 요약</h2>
+<h3>팔로워 추이 (6월 1일 ~ 6월 24일)</h3>
+<table>
+  <thead><tr><th>항목</th><th>수치</th></tr></thead>
+  <tbody>
+    <tr><td>기준 팔로워 수</td><td>18,003명</td></tr>
+    <tr><td>팔로우</td><td>+186명</td></tr>
+    <tr><td>팔로우 취소</td><td>-123명</td></tr>
+    <tr><td>순증</td><td>+63명</td></tr>
+    <tr><td>전월 대비 증가율</td><td>약 0.4%</td></tr>
+  </tbody>
+</table>
+
+<div class="grid2">
+  <div class="card"><h3>월별 팔로워 증감 (유입/취소/순증)</h3>
+    <div class="chart-box"><canvas id="chFollow"></canvas></div></div>
+  <div class="card"><h3>월별 순증 & 누적 팔로워 추이</h3>
+    <div class="chart-box"><canvas id="chTotal"></canvas></div></div>
+</div>
+
+<p>전월 순증(+213) 대비 이번 달 순증(+63)으로 성장 폭 둔화. 팔로우 유입(+186)과 취소(-123)
+모두 전월(+425 / -212) 대비 절대치가 감소하며 전반적인 계정 활동량 자체가 축소된 흐름.</p>
+<p>증가율 둔화의 주요 원인은 ① 침낭 수요 핵심 시즌 진입 대비 인기 재입고 상품 입고 지연,
+② 계절·날씨 영향, ③ 타프 관련 콘텐츠 부재로 분석. 6월은 신규 자극 요소가 부족한 구간으로,
+7월 재입고 물량과 이벤트 피드 전환을 통해 성장 흐름 회복을 도모할 계획.</p>
+
+<!-- ===== 2. 콘텐츠 성과 ===== -->
+<h2>2. 콘텐츠 성과 및 KPI 분석</h2>
+
+<h3>2-1. 6월 콘텐츠 운영 흐름</h3>
+<p>6월은 전반적으로 콘텐츠 업로드 수가 감소. 콘텐츠당 준비 기간이 길어졌고, 야외 이미지 촬영의
+어려움이 직접적 원인. 현재 야외 촬영분의 외주 제작 전환을 위해 제작 가능자 조사를 진행 중이며,
+7월부터 협의를 거쳐 안정적 제작 흐름 구축 예정. 또한 존뮤어트레일 추가 촬영 확정에 따라 확보되는
+신규 이미지 자산 기반 콘텐츠 재제작을 7월부터 본격 반영 예정.</p>
+
+<h3>2-2. 피드·릴스 콘텐츠별 성과</h3>
+<div class="grid2">
+  <div class="card"><h3>조회수 vs 도달 계정</h3>
+    <div class="chart-box"><canvas id="chFeedView"></canvas></div></div>
+  <div class="card"><h3>좋아요 vs 저장</h3>
+    <div class="chart-box"><canvas id="chFeedEng"></canvas></div></div>
+</div>
+
+<table>
+  <thead><tr><th>콘텐츠</th><th>조회수</th><th>도달</th><th>좋아요</th>
+  <th>공유</th><th>저장</th><th>팔로우 증가</th><th>전환율</th></tr></thead>
+  <tbody>
+    <tr><td>브랜드 필름 릴스 (6/4)</td><td>5,959</td><td>3,795</td><td>122</td><td>4</td><td>1</td><td>+1</td><td>0.02%</td></tr>
+    <tr><td>썸머라이트 500 레이크 틸 (6/11)</td><td>6,812</td><td>4,003</td><td>89</td><td>2</td><td>2</td><td>+1</td><td>0.01%</td></tr>
+    <tr><td>다운라이너 90 릴스 (6/17)</td><td>7,509</td><td>3,982</td><td>87</td><td>2</td><td>11</td><td>+2</td><td>0.03%</td></tr>
+  </tbody>
+</table>
+<p class="pending">※ 꼴로르 메이커스 UL 2026 이벤트 피드(6/29), 다운라이너 프로 190 릴스(6/30)는
+업로드 예정으로 7월 보고서 반영 예정.</p>
+<p>다운라이너 90 릴스가 조회수 1위(7,509) 및 저장 11건으로 최상위 관여 기록. 외주 없이 진행되어
+제작 효율도 가장 높음. 짧은 릴스 포맷의 수요가 상대적으로 높게 측정됨을 재확인.</p>
+
+<h3>2-3. 스토리 콘텐츠별 성과</h3>
+<div class="grid2">
+  <div class="card"><h3>스토리 조회수 vs 링크 클릭</h3>
+    <div class="chart-box"><canvas id="chStory"></canvas></div></div>
+  <div class="card"><h3>씨씨레터 링크 클릭률 3개월 추이</h3>
+    <div class="chart-box"><canvas id="chCC"></canvas></div></div>
+</div>
+
+<table>
+  <thead><tr><th>콘텐츠</th><th>조회수</th><th>반응</th><th>프로필 활동</th>
+  <th>링크 클릭</th><th>링크 클릭률</th></tr></thead>
+  <tbody>
+    <tr><td>위드 꼴로르 재안내 (6/15)</td><td>1,636</td><td>24</td><td>30</td><td>—</td><td>—</td></tr>
+    <tr><td>씨씨레터 안내 (6/26)</td><td>477</td><td>7</td><td>1</td><td>22</td><td>4.61%</td></tr>
+  </tbody>
+</table>
+<p>씨씨레터는 낮은 조회수(477)에도 클릭률 4.61%로 강한 전환력 유지. 씨씨레터 포맷이 조회 규모와
+무관하게 안정적 전환 자산으로 기능함을 3개월 연속 확인(4월 2.51% → 5월 9.89% → 6월 4.61%).</p>
+
+<h3>2-4. KPI 평가 기준 적용 결과</h3>
+<div class="card"><h3>피드·릴스 팔로우 전환율 (%)</h3>
+  <div class="chart-box"><canvas id="chConv"></canvas></div></div>
+<table>
+  <thead><tr><th>콘텐츠</th><th>팔로우 전환율</th><th>KPI 평가</th></tr></thead>
+  <tbody>
+    <tr><td>브랜드 필름 릴스</td><td>0.02%</td><td>브랜딩형</td></tr>
+    <tr><td>썸머라이트 500 레이크 틸</td><td>0.01%</td><td>브랜딩형</td></tr>
+    <tr><td>다운라이너 90 릴스</td><td>0.03%</td><td>브랜딩형</td></tr>
+  </tbody>
+</table>
+<p>6월 콘텐츠 전반이 0.01~0.03% 구간 분포, 5월(0.01~0.16%) 대비 평균 전환율 추가 하락.
+업로드 수 감소·행사 콘텐츠 부재·기존 이미지/브랜드 자산형 중심 운영이 복합 작용한 결과.
+다음 단계 0.2% 이상 진입을 위해 7월 재입고 콘텐츠, 이벤트 피드 전환, 존뮤어트레일 재제작
+콘텐츠가 핵심 기회.</p>
+
+<!-- ===== 3. 월드와이드 ===== -->
+<h2>3. 월드 와이드 인스타그램 계정 운영 현황</h2>
+<h3>1) 해외 인플루언서 협찬 추진</h3>
+<p>이국적 이미지 자산 확보를 위해 해외 인플루언서와 협의 진행, 현재 알제리·영국 인플루언서와
+협찬 최종 조율 단계. 미국 인플루언서 대상 제안도 병행 진행 중. 협찬 접근 방식 자체가 신규
+영역인 만큼 6월 한 달간 마케팅팀 회의를 거쳐 진행 기준 및 접근 전략을 정립한 후 조율에 착수.
+협찬 확정 및 성과는 다음 보고서에 후속 반영 예정.</p>
+<h3>2) 기존 콘텐츠 리그램 운영</h3>
+<p>6월에는 신규 제작 대신 기존 국내 계정 콘텐츠를 리그램하는 방식으로 운영, 그 결과 일본 계정
+조회수가 상대적으로 높게 형성. 다만 운영 전·후 비교 인사이트가 없어 정량 분석은 보류하며,
+비교 데이터가 누적되는 다음 달부터 본격 분석 가능 전망.</p>
+
+<!-- ===== 4. 홈페이지 ===== -->
+<h2>4. 홈페이지 콘텐츠 성과</h2>
+<h3>4-1. 씨씨레터 저널 — 썸머라이트 500 vs 슬립스퀘어 ST 500 (6/25 업로드)</h3>
+<table>
+  <thead><tr><th>항목</th><th>수치</th></tr></thead>
+  <tbody>
+    <tr><td>페이지뷰(PV)</td><td>약 187회</td></tr>
+    <tr><td>게시판 조회수</td><td>137회</td></tr>
+  </tbody>
+</table>
+<p>애널리틱스 기준 PV 약 187회로 게시판 조회수(137회)와 유사 수준. 업로드 직후임을 감안하면
+정상 수치. 게시판 목록 내부 이동·직접 유입이 대부분이며 네이버 검색 직접 유입은 아직 매우 낮음.</p>
+<div class="note">※ 이전 집계의 '네이버 유입 949건'은 본 저널 단독 수치가 아닌 쇼핑몰 전체 네이버
+유입 합계로, 본 보고서에서 정정 반영함.</div>
+
+<h3>저널 확인 후 이동 상품 (상위)</h3>
+<table>
+  <thead><tr><th>순위</th><th>이동 상품</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>썸머라이트 500 [빈티지 그린]</td></tr>
+    <tr><td>2</td><td>썸머라이트 500 [베이지 그레이]</td></tr>
+    <tr><td>3</td><td>썸머라이트 500 [그레이]</td></tr>
+  </tbody>
+</table>
+<p>업로드 직후 단계로 기존 방문자 관심이 썸머라이트 500 시리즈로 이어지는 흐름 확인. 4월
+다운라이너 프로 190 저널, 5월 라인업 비교 저널에 이어 비교형 저널 콘텐츠가 상세페이지 유입을
+안정적으로 유도하는 자산으로 3개월 연속 기능함을 재확인.</p>
+
+</div>
+
+<script>
+// 공통 색상
+const MAIN="#2E5266", ACCENT="#E08E45", SUB="#6E8898",
+      PLUS="#4C9A6E", MINUS="#C0504D";
+Chart.defaults.font.family = "Malgun Gothic, Apple SD Gothic Neo, Noto Sans KR, sans-serif";
+Chart.defaults.font.size = 12;
+const noLegend = {plugins:{legend:{display:false}}};
+
+// 1) 팔로워 증감 (5·6월)
+new Chart(chFollow, {type:'bar',
+  data:{labels:['5월','6월'],
+    datasets:[
+      {label:'유입',data:[425,186],backgroundColor:PLUS},
+      {label:'취소',data:[-212,-123],backgroundColor:MINUS},
+      {label:'순증',data:[213,63],backgroundColor:ACCENT}]},
+  options:{maintainAspectRatio:false,responsive:true}});
+
+// 2) 순증 막대 + 누적 선
+new Chart(chTotal, {
+  data:{labels:['4월','5월','6월'],
+    datasets:[
+      {type:'bar',label:'순증',data:[144,213,63],backgroundColor:MAIN,yAxisID:'y'},
+      {type:'line',label:'누적 팔로워',data:[17786,17930,18003],
+        borderColor:MINUS,backgroundColor:MINUS,tension:.3,yAxisID:'y1'}]},
+  options:{maintainAspectRatio:false,responsive:true,
+    scales:{y:{position:'left',title:{display:true,text:'순증(명)'}},
+            y1:{position:'right',grid:{drawOnChartArea:false},
+                title:{display:true,text:'누적(명)'}}}}});
+
+// 3) 피드 조회수 vs 도달
+new Chart(chFeedView, {type:'bar',
+  data:{labels:['브랜드 필름','썸머라이트500','다운라이너90'],
+    datasets:[
+      {label:'조회수',data:[5959,6812,7509],backgroundColor:MAIN},
+      {label:'도달',data:[3795,4003,3982],backgroundColor:SUB}]},
+  options:{maintainAspectRatio:false,responsive:true}});
+
+// 4) 좋아요 vs 저장
+new Chart(chFeedEng, {type:'bar',
+  data:{labels:['브랜드 필름','썸머라이트500','다운라이너90'],
+    datasets:[
+      {label:'좋아요',data:[122,89,87],backgroundColor:ACCENT},
+      {label:'저장',data:[1,2,11],backgroundColor:MAIN}]},
+  options:{maintainAspectRatio:false,responsive:true}});
+
+// 5) 스토리 조회수 vs 링크 클릭
+new Chart(chStory, {
+  data:{labels:['위드 꼴로르 재안내','씨씨레터 안내'],
+    datasets:[
+      {type:'bar',label:'조회수',data:[1636,477],backgroundColor:MAIN,yAxisID:'y'},
+      {type:'line',label:'링크 클릭',data:[0,22],borderColor:ACCENT,
+        backgroundColor:ACCENT,tension:.2,yAxisID:'y1'}]},
+  options:{maintainAspectRatio:false,responsive:true,
+    scales:{y:{position:'left',title:{display:true,text:'조회수'}},
+            y1:{position:'right',grid:{drawOnChartArea:false},
+                title:{display:true,text:'링크 클릭'}}}}});
+
+// 6) 씨씨레터 클릭률 추이
+new Chart(chCC, {type:'line',
+  data:{labels:['4월','5월','6월'],
+    datasets:[{label:'클릭률(%)',data:[2.51,9.89,4.61],
+      borderColor:ACCENT,backgroundColor:ACCENT,tension:.3,
+      pointRadius:6,fill:false}]},
+  options:{maintainAspectRatio:false,responsive:true,...noLegend,
+    scales:{y:{title:{display:true,text:'클릭률(%)'}}}}});
+
+// 7) 팔로우 전환율
+new Chart(chConv, {type:'bar',
+  data:{labels:['브랜드 필름','썸머라이트500','다운라이너90'],
+    datasets:[{label:'전환율(%)',data:[0.02,0.01,0.03],backgroundColor:MAIN}]},
+  options:{maintainAspectRatio:false,responsive:true,...noLegend,
+    scales:{y:{title:{display:true,text:'전환율(%)'}}}}});
+</script>
+
+</body>
+</html>
